@@ -1,9 +1,14 @@
-FROM wordpress
+FROM wordpress:php8.1-apache
+
+COPY ./custom-php.ini /usr/local/etc/php/conf.d/
+
+WORKDIR /var/www/html
+COPY ./wp-config.php ./wp-config.php
+COPY ./.htaccess ./.htaccess
 
 # copy themes 
-COPY ./themes /usr/src/wordpress/wp-content/themes
+COPY ./themes ./wp-content/themes
+# copy plugins
+COPY ./plugins ./wp-content/plugins
 
-# copy plugins 
-COPY ./plugins /usr/src/wordpress/wp-content/plugins
-
-# add more stuff here if you want some other preinstalled wp-content
+ENTRYPOINT ["docker-entrypoint.sh"]
