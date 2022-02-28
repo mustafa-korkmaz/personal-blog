@@ -1,1 +1,38 @@
-##todo add docker compose scripts
+services:
+  blog:
+    depends_on:
+      - blog_db
+    container_name: blog
+    restart: unless-stopped
+    image: mute/blog:latest
+    expose:
+      - 80
+    environment:
+      - WORDPRESS_DB_HOST=blog_db
+      - WORDPRESS_DB_NAME=${WORDPRESS_DB_NAME}
+      - WORDPRESS_DB_USER=${WORDPRESS_DB_USER}
+      - WORDPRESS_DB_PASSWORD=${WORDPRESS_DB_PASSWORD}
+      - VIRTUAL_HOST=${BLOG_DOMAIN}
+      - LETSENCRYPT_HOST=${BLOG_DOMAIN}
+    volumes:
+      - blog_website:/var/www/html
+  blog_db:
+    container_name: blog_db
+    restart: unless-stopped
+    image: mysql
+    expose:
+      - 3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_ROOT_PASSWORD}
+      - MYSQL_DATABASE=${WORDPRESS_DB_NAME}
+      - MYSQL_USER=${WORDPRESS_DB_USER}
+      - MYSQL_PASSWORD=${WORDPRESS_DB_PASSWORD}
+    volumes:
+      - blog_db:/var/lib/mysql
+volumes:
+ blog_db: null
+ blog_website: null
+networks:
+  default:
+    external:
+      name: ${DOCKER_NETWORK}

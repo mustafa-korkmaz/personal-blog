@@ -10,5 +10,3 @@ COPY ./.htaccess ./.htaccess
 COPY ./themes ./wp-content/themes
 # copy plugins
 COPY ./plugins ./wp-content/plugins
-
-ENTRYPOINT ["docker-entrypoint.sh"]
