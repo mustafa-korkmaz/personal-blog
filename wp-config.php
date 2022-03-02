@@ -115,9 +115,6 @@ define( 'WP_DEBUG', !!getenv_docker('WORDPRESS_DEBUG', '') );
 // see also https://wordpress.org/support/article/administration-over-ssl/#using-a-reverse-proxy
 // (we include this by default because reverse proxying is extremely common in container environments)
 
-define('WP_HOME', getenv_docker('WORDPRESS_HOME', ''));
-define('WP_SITEURL', getenv_docker('WORDPRESS_SITEURL', ''));
-
 if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && strpos($_SERVER['HTTP_X_FORWARDED_PROTO'], 'https') !== false) {
         define('FORCE_SSL_ADMIN', true);
         $_SERVER['HTTPS'] = 'on';
