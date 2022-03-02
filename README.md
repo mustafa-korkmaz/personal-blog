@@ -1,5 +1,5 @@
 Yet another WordPress installation repository :)  
-This repository shows the steps that I used for pusblishing my personal website.  
+This repository shows the steps that I used for publishing my personal website.  
 
 **Features**
 - Pre-defined plugins
@@ -17,7 +17,7 @@ This repository shows the steps that I used for pusblishing my personal website.
 
 `docker run -d --restart always -p 3306:3306 --name wordpress-db -v wordpress-db:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root-pwd -e MYSQL_DATABASE=blog -e MYSQL_USER=mute -e MYSQL_PASSWORD=user-pwd mysql`
 
-### 3. Create your web site with your docker image
+### 3. Create your website with your docker image
 
 `docker run -d --restart always -p 8888:80 --name wordpress -e WORDPRESS_DB_HOST=your-db-host -e WORDPRESS_DB_NAME=blog -e WORDPRESS_DB_USER=mute -e WORDPRESS_DB_PASSWORD=user-pwd custom-wordpress`
 
