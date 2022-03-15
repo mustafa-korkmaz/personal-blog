@@ -2,7 +2,6 @@ Yet another WordPress installation repository :)
 This repository shows the steps that I used for publishing my personal website.  
 
 **Features**
-- Pre-defined plugins
 - Pre-defined themes
 - Deploy with either `docker run` or `docker compose`
 - Reverse proxy and ssl offloading support with [nginx-proxy](https://github.com/nginx-proxy/nginx-proxy)
@@ -13,7 +12,7 @@ This repository shows the steps that I used for publishing my personal website.
 
 `docker build . -t custom-wordpress`
 
-### 2. Set up your mysql database
+### 2. Set up your MySQL database
 
 `docker run -d --restart always -p 3306:3306 --name wordpress-db -v wordpress-db:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root-pwd -e MYSQL_DATABASE=blog -e MYSQL_USER=mute -e MYSQL_PASSWORD=user-pwd mysql`
 
