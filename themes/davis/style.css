@@ -43,7 +43,17 @@ html, body {
     min-height: 100%; 
 }
 
-h1, h2, h3, h4, h5, h6, p, blockquote, address, big, cite, code, em, font, img, small, strike, sub, sup, li, ol, ul, fieldset, form, label, legend, button, table, caption, tr, th, td {
+h1, h2, h3, h4, h5, h6 {
+	margin:0;
+	padding:0;
+	border:0;
+	font-weight:normal;
+	font-style:normal;
+	line-height:1;
+	text-align:left;
+}
+
+p, blockquote, address, big, cite, code, em, font, img, small, strike, sub, sup, li, ol, ul, fieldset, form, label, legend, button, table, caption, tr, th, td {
 	margin:0;
 	padding:0;
 	border:0;
@@ -111,14 +121,18 @@ body {
 	border: none;
     color: #000;
     font-size: 18px;
+	-webkit-box-sizing: border-box; 
+    -moz-box-sizing: border-box; 
+	box-sizing: border-box; 
+    font-family: 'PT Serif', Georgia, serif;
 }
 
-body * {
+/*body * {
         -webkit-box-sizing: border-box; 
         -moz-box-sizing: border-box; 
 	box-sizing: border-box; 
     font-family: 'PT Serif', Georgia, serif;
-}
+}*/
 
 a {
 	text-decoration: none;
@@ -310,6 +324,10 @@ input::-moz-placeholder { color: #767676; }
 	width: 100%;
 }
 
+h1.archive-title {
+	font-size: 100%;
+}
+
 .archive-title {
 	font-weight: 700;
 	line-height: 1.4;
@@ -394,6 +412,10 @@ em {
 }
 
 .post p:last-child { margin-bottom: 0; }
+
+.post h1 {
+    font-size: 1.5em;
+}
 
 .post h1,
 .post h2,
