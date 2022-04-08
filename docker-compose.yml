@@ -30,7 +30,7 @@ services:
       - MYSQL_PASSWORD=${WORDPRESS_DB_PASSWORD}
     volumes:
       - blog_db:/var/lib/mysql
-  db_backup:
+  blog_db_backup:
     container_name: blog_db_backup
     image: tiredofit/db-backup:latest
     volumes:
