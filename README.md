@@ -4,7 +4,8 @@ This repository shows the steps that I used for publishing my personal website.
 **Features**
 - Pre-defined themes
 - Deploy with either `docker run` or `docker compose`
-- Reverse proxy and ssl offloading support with [nginx-proxy](https://github.com/nginx-proxy/nginx-proxy)
+- Reverse proxy and ssl offloading support via [nginx-proxy](https://github.com/nginx-proxy/nginx-proxy)
+- Automated backup support via [docker-db-backup](https://github.com/tiredofit/docker-db-backup)
 
 # Installation 
 
@@ -26,6 +27,5 @@ Once you completed step 1 and pushed your image to a container registry, [`docke
 - Set your respective environment variables in [`.env`](./.env)  
 - Set `DOCKER_NETWORK` env var in order to use a pre-existing network on docker
 - `VIRTUAL_HOST` and `LETSENCRYPT_HOST` env vars can be used to set up an [nginx-proxy](https://github.com/nginx-proxy/nginx-proxy) configuration properly which I achived [here](https://github.com/mustafa-korkmaz/nginx-multiple-sites)
-- Automated backups are included using [docker-db-backup](https://github.com/tiredofit/docker-db-backup)
 
 `docker-compose up -d`
