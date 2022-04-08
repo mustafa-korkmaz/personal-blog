@@ -30,6 +30,22 @@ services:
       - MYSQL_PASSWORD=${WORDPRESS_DB_PASSWORD}
     volumes:
       - blog_db:/var/lib/mysql
+  db_backup:
+    container_name: blog_db_backup
+    image: tiredofit/db-backup:latest
+    volumes:
+      - ./backups:/backup
+    environment:
+      - DB_TYPE=mysql
+      - DB_HOST=blog_db
+      - DB_NAME=${WORDPRESS_DB_NAME}
+      - DB_USER=root
+      - DB_PASS=${MYSQL_ROOT_PASSWORD}
+      - DB_PORT=3306
+      - DB_CLEANUP_TIME=8640
+      - DB_DUMP_BEGIN=+1
+      - SIZE_VALUE=megabytes
+    restart: always
 volumes:
  blog_db: null
  blog_website: null
