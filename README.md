@@ -7,6 +7,8 @@ This repository shows the steps that I used for publishing my personal website.
 - Reverse proxy and ssl offloading support via [nginx-proxy](https://github.com/nginx-proxy/nginx-proxy)
 - Automated backup support via [docker-db-backup](https://github.com/tiredofit/docker-db-backup)
 
+Detailed version of step by step installation in Turkish is [here](https://mustafakorkmaz.site/2022/04/bir-baska-wordpress-sitesi-kisisel-blogum).
+
 # Installation 
 
 ### 1. Build your custom WordPress [`Dockerfile`](./Dockerfile)
