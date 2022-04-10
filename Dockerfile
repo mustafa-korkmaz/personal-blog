@@ -8,5 +8,3 @@ COPY ./.htaccess ./.htaccess
 
 # copy themes 
 COPY ./themes ./wp-content/themes
-# copy plugins
-COPY ./plugins ./wp-content/plugins
