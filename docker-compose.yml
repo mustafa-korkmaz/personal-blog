@@ -21,6 +21,8 @@ services:
     container_name: blog_db
     restart: unless-stopped
     image: mysql
+    cap_add:
+      - SYS_NICE
     expose:
       - 3306
     environment:
