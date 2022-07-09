@@ -42,9 +42,8 @@ if ( ! function_exists( 'davis_load_style' ) ) :
 
 		$theme_version = wp_get_theme( 'davis' )->get( 'Version' );
 
-		wp_register_style( 'davis_fonts', get_theme_file_uri( '/assets/css/fonts.css' ) );
-		wp_enqueue_style( 'davis_style', get_stylesheet_uri(), array( 'davis_fonts' ), $theme_version );
-
+		wp_register_style( 'davis_fonts', '//fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic' );
+		wp_enqueue_style( 'davis_style', get_stylesheet_uri(), array( 'davis_fonts' ) );
 	}
 	add_action( 'wp_enqueue_scripts', 'davis_load_style' );
 endif;
