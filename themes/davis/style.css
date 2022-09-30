@@ -980,6 +980,12 @@ ul.wp-block-gallery:not(.alignright) {
 	text-align: center;
 }
 
+.site-footer a img {
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
+}
+
 .site-footer p {
 	line-height: 1;
 	text-align: center;

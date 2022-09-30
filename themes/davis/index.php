@@ -171,7 +171,9 @@
 	        
 	        <footer class="site-footer" role="contentinfo">
 		        
-		        <p>&copy; <?php echo date( 'Y' ); ?> <a href="<?php echo esc_url( home_url() ); ?>"><?php bloginfo( 'name' ); ?></a></p>
+			<a href="https://www.digitalocean.com/?refcode=34815fe2831f&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge">
+				<img src="https://web-platforms.sfo2.digitaloceanspaces.com/WWW/Badge%202.svg" alt="DigitalOcean Referral Badge" />
+			</a>
 		        <p><?php _e( 'Theme by', 'davis' ); ?> <a href="https://andersnoren.se">Anders Nor&eacute;n</a></p>
 		        
 	        </footer><!-- footer -->
